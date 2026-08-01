@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Word Links — The Bostonian Times</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="masthead">
+    <div class="edition">Saturday Edition · Est. 1897</div>
+    <h1>The Bostonian Times</h1>
+    <div class="rule"><span>Word Links</span></div>
+  </header>
+
+  <main>
+    <section class="intro">
+      <p class="kicker">The Daily Diversion</p>
+      <h2>Connect the words.<br><em>Mind every point.</em></h2>
+      <p class="deck">Bridge the two printed words by laying one word at a time. Every new word must cross at least one word already in play.</p>
+    </section>
+
+    <section class="game-shell" aria-label="Word Links game">
+      <div class="game-topbar">
+        <div>
+          <span class="eyebrow" id="daily-label">Today’s challenge</span>
+          <strong id="pair-label">LIGHT <i>to</i> STONE</strong>
+          <small class="difficulty" id="difficulty-label"></small>
+        </div>
+        <div class="score-box"><span>Score</span><strong id="score">0</strong><small>points</small></div>
+      </div>
+
+      <div class="game-layout">
+        <div class="board-wrap">
+          <div id="board" class="board" role="grid" aria-label="15 by 15 letter grid"></div>
+        </div>
+
+        <aside class="desk">
+          <div class="desk-section">
+            <span class="step">1</span>
+            <div><label for="word-input">Your word</label><input id="word-input" maxlength="15" placeholder="TYPE A WORD" autocomplete="off" spellcheck="false"></div>
+          </div>
+          <div class="desk-section split">
+            <div><span class="step">2</span><label for="row-input">Row</label><input id="row-input" type="number" min="1" max="15" placeholder="—"></div>
+            <div><label for="col-input">Column</label><input id="col-input" type="number" min="1" max="15" placeholder="—"></div>
+          </div>
+          <fieldset>
+            <legend><span class="step">3</span> Direction</legend>
+            <label class="direction"><input type="radio" name="direction" value="H" checked><span>Across</span></label>
+            <label class="direction"><input type="radio" name="direction" value="V"><span>Down</span></label>
+          </fieldset>
+          <button id="place-btn" class="place-btn">Place word <span>→</span></button>
+          <p id="message" class="message" aria-live="polite">Select a square or enter a row and column.</p>
+
+          <div class="ledger">
+            <h3>Score Ledger</h3>
+            <div><span>Words laid</span><strong id="word-count">0</strong></div>
+            <div><span>Base cost</span><strong id="base-cost">0</strong></div>
+            <div><span>Letter cost</span><strong id="letter-cost">0</strong></div>
+            <div class="total"><span>Total</span><strong id="ledger-total">0</strong></div>
+          </div>
+          <p class="next-puzzle" id="next-puzzle">A new puzzle arrives at midnight.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="rules">
+      <h2>How to Play</h2>
+      <ol>
+        <li><b>Lay a word</b><span>Place it across or down on the 15 × 15 grid.</span></li>
+        <li><b>Make a crossing</b><span>Match letters with one or more words already on the board. No word may be used twice.</span></li>
+        <li><b>Build the bridge</b><span>Connect the two starting words with the lowest possible score.</span></li>
+      </ol>
+      <p class="cost-note">Each word costs <b>10 points</b> + <b>1 per letter</b>. Lower is better.</p>
+    </section>
+  </main>
+
+  <footer><span>The Bostonian Times</span><i>“A sound mind is its own reward.”</i><span>No. 47</span></footer>
+  <script src="script.js"></script>
+</body>
+</html>
